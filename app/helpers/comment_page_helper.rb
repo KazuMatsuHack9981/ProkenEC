@@ -1,0 +1,2 @@
+module CommentPageHelper
+end
