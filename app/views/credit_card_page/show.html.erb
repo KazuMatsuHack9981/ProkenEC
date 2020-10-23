@@ -1,0 +1,8 @@
+<h1>your credit card info</h1>
+<% if @card==nil then %>
+  <p>クレジットカードは登録されていません</p>
+<% else %>
+  <p>number is:</p>
+  <%= @card.number %>
+<% end %>
+<%= link_to "戻る", credit_card_page_index_path %>
