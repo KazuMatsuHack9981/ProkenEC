@@ -1,2 +1,17 @@
 <h1>コメント掲載するところ</h1>
 <%= link_to "ホームに戻る", root_path %>
+<%= link_to "コメント新規作成する", new_comment_page_path %>
+
+<table>
+  <tr>
+    <th>ユーザ</th><th>コメント</th>
+  </tr>
+  <% @comment.each do |comment| %>
+  <tr>
+    <td><%= comment.user.username %></td>
+    <td><%= comment.content %></td>
+    <td><a href="/comment_page/<%= comment.id %>/edit">Edit</a></td>
+    <td><%= link_to "delete", comment_page_path(comment.id), :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
