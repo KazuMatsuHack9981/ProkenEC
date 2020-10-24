@@ -1,1 +1,10 @@
 <h1>credit card 更新</h1>
+<% if @user.credit_card==nil then %>
+  <p>you haven't registered your credit card yet!</p>
+  <%= link_to "戻る", credit_card_page_index_path  %>
+<% else %>
+  <%= form_for(@card, url: {controller: "credit_card_page", action: "update"}) do |f| %>
+    <%= f.number_field :number %>
+    <%= f.submit "send" %>
+  <% end %>
+<% end %>

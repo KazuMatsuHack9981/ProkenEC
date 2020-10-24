@@ -1,5 +1,11 @@
 <h1>credit card 登録</h1>
-<%= form_for(@card, url: {controller: "credit_card_page", action: "create"}) do |f| %>
-  <%= f.number_field :number %>
-  <%= f.submit "send" %>
+
+<% if @user.credit_card!=nil then %>
+  <p>you already registered credit card</p>
+  <%= link_to "戻る", credit_card_page_index_path  %>
+<% else %>
+  <%= form_for(@card, url: {controller: "credit_card_page", action: "create"}) do |f| %>
+    <%= f.number_field :number %>
+    <%= f.submit "send" %>
+  <% end %>
 <% end %>

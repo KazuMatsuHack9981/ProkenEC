@@ -9,6 +9,7 @@ class CreditCardPageController < ApplicationController
 
   def new
     @card = CreditCard.new
+    @user = current_user
   end
 
   def create
@@ -21,12 +22,20 @@ class CreditCardPageController < ApplicationController
   end
 
   def edit
+    @card = CreditCard.find(params[:id])
+    @user = current_user
   end
 
   def update
+    @card = CreditCard.find(params[:id])
+    @card.update(card_params)
+    redirect_to credit_card_page_index_path
   end
 
   def destroy
+    @card = CreditCard.find(params[:id])
+    @card.destroy
+    redirect_to credit_card_page_index_path
   end
 
   private

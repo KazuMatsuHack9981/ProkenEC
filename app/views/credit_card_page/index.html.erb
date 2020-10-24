@@ -1,4 +1,9 @@
 <h1>決済するところ</h1>
 <%= link_to "ホームに戻る", root_path %>
 <%= link_to "クレジットカード情報", credit_card_page_path(@user.id) %>
-<%= link_to "クレジットカード登録", new_credit_card_page_path %>
+<% if @user.credit_card==nil then %>
+  <%= link_to "クレジットカード登録", new_credit_card_page_path %>
+<% else %>
+  <%= link_to "クレジットカード変更", edit_credit_card_page_path(@user.credit_card.id) %>
+  <%= link_to "クレジットカード登録解除", credit_card_page_path(@user.credit_card.id), :method => :delete %>
+<% end %>
