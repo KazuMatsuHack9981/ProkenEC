@@ -2,3 +2,5 @@
 <p>Find me in app/views/homepage/index.html.erb</p>
 <%= link_to "コメント一覧", comment_page_index_path %>
 <%= link_to "決済ホーム", credit_card_page_index_path %>
+<%= link_to "logout", destroy_user_session_path, :method => :delete %>
+<%= link_to "契約解除", user_registration_path, :method => :delete %>
