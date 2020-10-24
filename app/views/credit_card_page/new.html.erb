@@ -4,7 +4,7 @@
   <p>you already registered credit card</p>
   <%= link_to "戻る", credit_card_page_index_path  %>
 <% else %>
-  <%= form_for(@card, url: {controller: "credit_card_page", action: "create"}) do |f| %>
+  <%= form_for(@card, url: {controller: "credit_card_page", action: "confirmation"}) do |f| %>
     <%= f.number_field :number %>
     <%= f.submit "send" %>
   <% end %>

@@ -38,6 +38,11 @@ class CreditCardPageController < ApplicationController
     redirect_to credit_card_page_index_path
   end
 
+  def confirmation
+    @card = CreditCard.new(card_params)
+    #render :new if @card.invalid?
+  end
+
   private
 
   def card_params

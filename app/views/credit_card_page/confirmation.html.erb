@@ -1,0 +1,7 @@
+<%= form_for(@card, url: { controller: "credit_card_page", action: "create"}) do |f| %>
+  <p>登録するクレジットカード情報</p>
+  <%= @card.number %>
+  <%= f.hidden_field :number %>
+  <%= link_to '戻る', credit_card_page_index_path %>
+  <%= f.submit 'confirm' %>
+<% end %>

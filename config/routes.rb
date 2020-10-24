@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :homepage, only: [:index]
   resources :credit_card_page
+  post "credit_card_page/confirmation"
   resources :comment_page
   #devise_for :users, controllers: {
     #sessions: 'users/sessions'
