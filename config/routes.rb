@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :homepage, only: [:index]
   get "homepage/alluser"
-  resources :credit_card_page
+  resources :credit_card_page, param: :public_uid
   post "credit_card_page/confirmation"
   resources :comment_page
   
