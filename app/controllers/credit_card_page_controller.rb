@@ -22,18 +22,18 @@ class CreditCardPageController < ApplicationController
   end
 
   def edit
-    @card = CreditCard.find(params[:id])
+    @card = CreditCard.find_by(public_uid: params[:public_uid])
     @user = current_user
   end
 
   def update
-    @card = CreditCard.find(params[:id])
+    @card = CreditCard.find_by(public_uid: params[:public_uid])
     @card.update(card_params)
     redirect_to credit_card_page_index_path
   end
 
   def destroy
-    @card = CreditCard.find(params[:id])
+    @card = CreditCard.find_by(public_uid: params[:public_uid])
     @card.destroy
     redirect_to credit_card_page_index_path
   end
