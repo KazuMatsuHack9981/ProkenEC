@@ -1,4 +1,6 @@
 class CreditCardPageController < ApplicationController
+  load_and_authorize_resource(only: [:edit, :update, :destroy], class: CreditCard)
+
   def index
     @user = current_user
   end

@@ -1,4 +1,6 @@
 class CommentPageController < ApplicationController
+  load_and_authorize_resource(only: [:edit, :update, :destroy], class: Comment)
+
   def index
     @comment = Comment.all
   end
