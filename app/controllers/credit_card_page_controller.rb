@@ -24,12 +24,12 @@ class CreditCardPageController < ApplicationController
   end
 
   def edit
-    @card = CreditCard.find_by(public_uid: params[:public_uid])
     @user = current_user
+    @card = current_user.credit_card
   end
 
   def update
-    @card = CreditCard.find_by(public_uid: params[:public_uid])
+    @card = current_user.credit_card
     @card.update(card_params)
     redirect_to credit_card_page_index_path
   end
