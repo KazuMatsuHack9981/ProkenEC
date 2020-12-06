@@ -4,6 +4,7 @@
 <%= link_to "決済ホーム", credit_card_page_index_path %>
 <%= link_to "logout", destroy_user_session_path, :method => :delete %>
 <%= link_to "契約解除", user_registration_path, :method => :delete %>
+<%= link_to "商品を買う", payment_page_index_path %>
 <% if current_user.admin? then %>
   <%= link_to "ユーザー全データ(管理者only)", homepage_alluser_path %>
 <% end %>

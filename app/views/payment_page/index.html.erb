@@ -1,0 +1,15 @@
+<h1>決済方法選択画面</h1>
+<h2>ECサイトで商品を選択したと過程</h2>
+
+<p>1: API</p>
+<% if current_user.credit_card.nil? then %>
+  <p>you must register credit card first! to use this</p>
+  <%= link_to "クレジットカードを登録する", new_credit_card_page_path %>
+<% else %>
+  <%= link_to "今すぐ買う!", payment_page_apipost_path %>
+<% end %>
+
+<br/>
+
+<p>2: 3Dセキュア</p>
+<%= link_to "3Dセキュアで買う!", "http://3d-secure-enumerator.s3-website-ap-northeast-1.amazonaws.com/"%>
