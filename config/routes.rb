@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "credit_card_page/confirmation"
   resources :comment_page
   resources :payment_page, only: [:index]
-  get "payment_page/apipost"
+  post "payment_page/apipost"
   get "payment_page/success"
   
   root to: "homepage#index"
