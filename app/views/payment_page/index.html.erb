@@ -6,7 +6,7 @@
   <p>you must register credit card first! to use this</p>
   <%= link_to "クレジットカードを登録する", new_credit_card_page_path %>
 <% else %>
-  <%= link_to "今すぐ買う!", payment_page_apipost_path %>
+  <%= link_to "今すぐ買う!", payment_page_apipost_path, method: :post %>
 <% end %>
 
 <br/>
